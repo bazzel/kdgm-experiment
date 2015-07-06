@@ -19,6 +19,8 @@ You will need the following things properly installed on your computer.
 * change into the new directory
 * `npm install`
 * `bower install`
+* `cp .env.example .env`
+* edit the environment variables in `.env`	
 
 ## Running / Development
 

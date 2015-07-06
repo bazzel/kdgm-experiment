@@ -17,8 +17,8 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
       host: 'http://staging.kerkdienstgemist.nl/api/v1',
-      user: '<user>',
-      password: '<password>'
+      user: process.env.KDGM_USER,
+      password: process.env.KDGM_PASSWORD
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
@@ -53,8 +53,8 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.APP.host = 'http://kerkdienstgemist.nl/api/v1';
-    ENV.APP.user =  '<user>';
-    ENV.APP.password = '<password>';
+    //ENV.APP.user =  '<user>';
+    //ENV.APP.password = '<password>';
   }
 
   return ENV;
