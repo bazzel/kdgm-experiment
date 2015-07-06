@@ -1,0 +1,5 @@
+<ul>
+  {{#each model as |state|}}
+  <li>{{#link-to 'state' state.id}}{{state.name}}{{/link-to}} ({{state.count}})</li>
+  {{/each}}
+</ul>
