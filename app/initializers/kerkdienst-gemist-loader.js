@@ -2,7 +2,7 @@
 // for an explanation about Ember Application Initializers
 export function initialize(container, application) {
   // application.inject('route', 'foo', 'service:foo');
-  var store = container.lookup('store:main');
+  var store = container.lookup('service:store');
 
   // Wait until all of the following promises are resolved
   application.deferReadiness();
