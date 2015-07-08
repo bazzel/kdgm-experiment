@@ -1,9 +1,15 @@
-<ul>
+<div class="row">
   {{#each model as |hit|}}
-  <li>{{hit.station.name}} - {{hit.distance}}</li>
+    <div class="col s4">
+    {{#md-card title=hit.distance}}
+      {{#md-card-content}}
+        {{hit.station.name}}
+      {{/md-card-content}}
+    {{/md-card}}
+    </div>
   {{/each}}
-</ul>
+</div>
 
 {{#if hasMore}}
-  <button type='button' {{action 'loadMore'}} class='btn btn-primary btn-lg btn-block' disabled={{if isLoading 'disabled'}}>More <span class='caret'></span></button>
+<button type='button' {{action 'loadMore'}} class='btn btn-primary btn-lg btn-block' disabled={{if isLoading 'disabled'}}>More <span class='caret'></span></button>
 {{/if}}

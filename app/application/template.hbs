@@ -1,11 +1,16 @@
+{{#md-navbar name='Kerkdienst ge-Ember-ed'}}
+  <!-- A workaround to get the "active" class
+      to apply to the active <li> automatically -->
+{{#link-to 'states' tagName='li'}}
+  {{link-to 'Steden' 'states'}}
+{{/link-to}}
+{{#link-to 'nearby' tagName='li'}}
+  {{link-to 'In mijn buurt' 'nearby'}}
+{{/link-to}}
+{{/md-navbar}}
+
 <div class="container">
-  <ul>
-    <!--<li><a href>Search</a></li>-->
-    <!--<li><a href>Locate</a></li>-->
-    <li>{{#link-to 'states'}}Steden{{/link-to}}</li>
-    <li>{{#link-to 'nearby'}}In mijn buurt{{/link-to}}</li>
-  </ul>
-{{outlet}}
+  {{outlet}}
 </div>
 
 {{!-- ember-cli-materialize modal container --}}
