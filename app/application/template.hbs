@@ -1,7 +1,12 @@
-<ul>
-  <!--<li><a href>Search</a></li>-->
-  <!--<li><a href>Locate</a></li>-->
-  <li>{{#link-to 'states'}}Steden{{/link-to}}</li>
-  <li>{{#link-to 'nearby'}}In mijn buurt{{/link-to}}</li>
-</ul>
+<div class="container">
+  <ul>
+    <!--<li><a href>Search</a></li>-->
+    <!--<li><a href>Locate</a></li>-->
+    <li>{{#link-to 'states'}}Steden{{/link-to}}</li>
+    <li>{{#link-to 'nearby'}}In mijn buurt{{/link-to}}</li>
+  </ul>
 {{outlet}}
+</div>
+
+{{!-- ember-cli-materialize modal container --}}
+{{md-modal-container}}
