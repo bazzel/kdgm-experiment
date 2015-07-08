@@ -7,7 +7,7 @@ export default Ember.Route.extend({
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      return this.store.query('station', coords);
+      return this.store.query('hit', coords);
     });
   }
 });
