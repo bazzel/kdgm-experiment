@@ -1,10 +1,16 @@
 <div class="row">
   {{#each model as |hit|}}
     <div class="col s4">
-    {{#md-card title=hit.distance}}
+    {{#md-card title=hit.station.name
+               image=hit.station.image
+               activator=true
+               class='small'}}
       {{#md-card-content}}
-        {{hit.station.name}}
+        {{{hit.humanDistance}}}
       {{/md-card-content}}
+      {{#md-card-reveal}}
+        {{{hit.station.description}}}
+      {{/md-card-reveal}}
     {{/md-card}}
     </div>
   {{/each}}
