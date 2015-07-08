@@ -9,10 +9,19 @@ export default DS.JSONAPISerializer.extend({
       attributes[key] = resourceHash[key]
     );
 
-    // We need this to get details info about a state's cities.
-    //attributes['url'] = resourceHash.links.hits;
-
     resourceHash.attributes = attributes;
+    resourceHash.relationships = this._normalizeBelongsToStation(resourceHash);
+
     return this._super(...arguments);
+  },
+
+  _normalizeBelongsToStation: function(resourceHash) {
+    var relationships = resourceHash.links;
+    delete resourceHash.links;
+
+    relationships.station.data = relationships.station.linkage;
+    delete relationships.station.linkage;
+
+    return relationships;
   }
 });
