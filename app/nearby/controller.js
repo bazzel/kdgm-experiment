@@ -2,8 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   hasMore: function() {
-    return this.meta('pagination').next;
-  }.property(),
+    return this.get('model.length') > 0 && this.get('model.length') < this.meta('total_hits');
+  }.property('model.@each'),
   meta: function(key) {
     return this.store.metadataFor('hit')[key];
   },
@@ -19,7 +19,6 @@ export default Ember.Controller.extend({
       this.store.query('hit', query).then((data) => {
         this.get('model').pushObjects(data.get('content'));
         this.set('isLoading', false);
-        this.set('hasMore', this.meta('pagination').next);
       });
     }
   }
