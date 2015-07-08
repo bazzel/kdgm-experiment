@@ -1,9 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  hasMore: function() {
-    return this.get('model.length') > 0 && this.get('model.length') < this.meta('total_hits');
+  next: function() {
+    return this.meta('pagination').next;
   }.property('model.@each'),
+  hasMore: Ember.computed.alias('next'),
   meta: function(key) {
     return this.store.metadataFor('hit')[key];
   },
@@ -11,7 +12,7 @@ export default Ember.Controller.extend({
     loadMore: function() {
       this.set('isLoading', true);
       var query = {
-        page: this.meta('pagination').next,
+        page: this.get('next'),
         lat: this.meta('latitude'),
         lng: this.meta('longitude')
       };
