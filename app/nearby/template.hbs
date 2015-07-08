@@ -3,3 +3,7 @@
   <li>{{hit.station.name}} - {{hit.distance}}</li>
   {{/each}}
 </ul>
+
+{{#if hasMore}}
+  <button type='button' {{action 'loadMore'}} class='btn btn-primary btn-lg btn-block' disabled={{if isLoading 'disabled'}}>More <span class='caret'></span></button>
+{{/if}}
