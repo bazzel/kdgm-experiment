@@ -1,0 +1,19 @@
+<form {{action 'doSearch' on='submit'}}>
+  {{input value=query type='search' placeholder="Zoek uw kerk"}}
+  <submit/>
+</form>
+
+{{#if model}}
+  {{#md-collection content=content header=title as |hit|}}
+    <div class='collection-item'>
+      {{hit.station.name}}
+      <div class='secondary-content'>
+      {{hit.humanDistance}}
+      </div>
+    </div>
+  {{/md-collection}}
+{{/if}}
+
+{{#if hasMore}}
+<button type='button' {{action 'loadMore'}} class='btn btn-primary btn-lg btn-block' disabled={{if isLoading 'disabled'}}>More <span class='caret'></span></button>
+{{/if}}

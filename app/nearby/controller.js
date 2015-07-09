@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   next: function() {
     return this.meta('pagination').next;
-  }.property('model.@each'),
+  }.property('model.[]'),
   hasMore: Ember.computed.alias('next'),
   meta: function(key) {
     return this.store.metadataFor('hit')[key];
