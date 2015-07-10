@@ -20,16 +20,18 @@ You will need the following things properly installed on your computer.
 * `npm install`
 * `bower install`
 * `cp .env.example .env`
-* edit the environment variables in `.env`
+* edit the environment variables in `.env`	
 
 ## Running / Development
 
 * `ember server`
-* Visit your app at [http://localhost:9090](http://localhost:9090).
+* Visit your app at [http://localhost:4200](http://localhost:4200).
 
 ### Code Generators
 
 Make use of the many generators for code, try `ember help generate` for more details
+
+NOTE: Ember can be use with standard layout of folders (models/controllers/etc, like rails) or with pod's (domain object groupped). The latter is chosen for this expiriment.
 
 ### Running Tests
 
