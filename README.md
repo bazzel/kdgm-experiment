@@ -20,12 +20,12 @@ You will need the following things properly installed on your computer.
 * `npm install`
 * `bower install`
 * `cp .env.example .env`
-* edit the environment variables in `.env`	
+* edit the environment variables in `.env`
 
 ## Running / Development
 
 * `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit your app at [http://localhost:9090](http://localhost:9090).
 
 ### Code Generators
 
