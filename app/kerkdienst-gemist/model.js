@@ -7,7 +7,7 @@ export default DS.Model.extend({
   locate: DS.attr(),
   browseUrl: Ember.computed.alias('browse'),
   locateUrl: function() {
-    // Remove the querystring
+    // Remove the querystring (solution chosen to make use of convention see e.g. '/app/hit/adapter'
     return this.get('locate') && this.get('locate').split(/[?#]/)[0];
   }.property('locate')
 });

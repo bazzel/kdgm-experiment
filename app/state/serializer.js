@@ -1,5 +1,8 @@
 import DS from 'ember-data';
 
+// This code is only need as the KDGMI api is not made up-to-date yet with JSON api spec
+// 'relationships' and currently in 'links' attribute and module property not nested undder attributes property
+
 export default DS.JSONAPISerializer.extend({
   normalizeResponse: function (store, primaryModelClass, payload) {
     // The actual data is defined in the `meta` object.
