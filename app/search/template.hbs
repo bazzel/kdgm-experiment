@@ -1,6 +1,6 @@
 <form {{action 'doSearch' on='submit'}}>
   {{input value=query type='search' placeholder="Zoek uw kerk"}}
-  <submit/>
+  {{md-btn-submit icon='mdi-action-search' text='Search'}}
 </form>
 
 {{#if model}}
@@ -14,6 +14,4 @@
   {{/md-collection}}
 {{/if}}
 
-{{#if hasMore}}
-<button type='button' {{action 'loadMore'}} class='btn btn-primary btn-lg btn-block' disabled={{if isLoading 'disabled'}}>More <span class='caret'></span></button>
-{{/if}}
+{{infinite-scroll hasMore=hasMore isLoading=isLoading action='loadMore'}}

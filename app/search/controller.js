@@ -25,6 +25,10 @@ export default Ember.Controller.extend({
       });
     },
     loadMore: function() {
+      if (!this.get('hasMore')) {
+       return;
+      }
+
       this.set('isLoading', true);
       var query = {
         page: this.get('next'),
