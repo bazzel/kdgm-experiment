@@ -1,0 +1,10 @@
+{{#md-collection content=content header=title as |hit|}}
+  <div class='collection-item'>
+    {{hit.station.name}}
+    <div class='secondary-content'>
+    {{hit.humanDistance}}
+    </div>
+  </div>
+{{/md-collection}}
+
+{{infinite-scroll hasMore=hasMore isLoading=isLoading action='loadMore'}}

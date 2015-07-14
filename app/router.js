@@ -9,7 +9,9 @@ Router.map(function() {
   this.route('states');
   this.route('state', { path: 'states/:state_id' });
   this.route('nearby');
-  this.route('search');
+  this.route('search', function() {
+    this.route('results', { path: ':query' });
+  });
 });
 
 export default Router;

@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  needs: ['search'],
+  query: Ember.computed.alias('controllers.search.query'),
   title: function() {
     return this.get('totalHits') + ' kerken gevonden. ' + this.get('fetchedHits') + ' kerken worden getoond.';
   }.property('totalHits', 'fetchedHits'),
@@ -19,11 +21,6 @@ export default Ember.Controller.extend({
     return this.store.metadataFor('hit')[key];
   },
   actions: {
-    doSearch: function() {
-      this.store.query('hit', { query: this.get('query') }).then((data) => {
-        this.set('model', data);
-      });
-    },
     loadMore: function() {
       if (!this.get('hasMore')) {
        return;
