@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('state', { path: 'states/:state_id' });
   this.route('nearby');
   this.route('search');
+  this.route('station');
 });
 
 export default Router;
