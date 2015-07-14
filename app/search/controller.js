@@ -10,11 +10,11 @@ export default Ember.Controller.extend({
   fetchedHits: function() {
     return this.get('model.length');
   }.property('model.[]'),
-  hasMore: function() {
+  next: function() {
     var pagination = this.meta('pagination');
     return pagination && pagination.next;
   }.property('model.@each'),
-  next: Ember.computed.alias('hasMore'),
+  hasMore: Ember.computed.bool('next'),
   meta: function(key) {
     return this.store.metadataFor('hit')[key];
   },
