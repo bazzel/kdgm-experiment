@@ -18,6 +18,8 @@ export default Ember.Controller.extend({
   }.property('model.@each'),
   hasMore: Ember.computed.bool('next'),
   meta: function(key) {
+    // TODO: use this, as soon as updates correctly (which isn't currently):
+    // return this.get('model.meta')[key];
     return this.store.metadataFor('hit')[key];
   },
   actions: {
