@@ -12,7 +12,6 @@ export default Ember.Component.extend({
     });
   }.on('didInsertElement'),
   _checkIfInView: function() {
-    console.log('_checkIfInView');
     if (this._isScrolledToBottom()) {
       this.sendAction();
     }
